@@ -1,39 +1,13 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const data = require("./data")
+
+
 const PORT = 8000
 
 app.use(cors())
 
-let boxers = {
-    'mike tyson': {
-        'nickname': 'Kid Dynamite',
-        'type boxer': 'Power-puncher',
-        'Record':'50-6-2'
-    },
-   'floyd mayweather.jr': {
-        'nickname' : 'Money Mayweather',
-        'type boxer': 'Counter-puncher',
-        'Record': '50-0'
-    },
-    'vasily lomachenko':{
-        'nickname': 'Hi-tech',
-        'type boxer': 'Tactical-boxer',
-        'Record': '15-3'
-    },
-    'gervonte davis':{
-        'nickname': 'Tank',
-        'type boxer': 'Power-puncher',
-        'Record': '28-0'
-    },
-    'terrance crawford':{
-        'nickname': 'Bud',
-        'type boxer':'Switch-Hitter',
-        'Record':'37-0'
-    }
-
-
-}
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
